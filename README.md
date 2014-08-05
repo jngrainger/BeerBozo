@@ -1,4 +1,0 @@
-BeerBozo
-========
-
-Beer
