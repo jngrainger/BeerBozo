@@ -1,41 +1,30 @@
 <nav class="top-bar row">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Gulp & Angular</a></h1>
+      <h1><a href="#">BeerBozo</a></h1>
     </li>
   </ul>
 
   <section class="top-bar-section">
     <ul class="right">
-      <li class="active"><a ng-href="#">Home</a></li>
-      <li><a ng-href="#">About</a></li>
-      <li><a ng-href="#">Contact</a></li>
+      <li class="active"><a ng-href="#">Top Beer</a></li>
     </ul>
   </section>
 </nav>
 
 <div class="row">
-  <div class="large-12 large-text-center columns">
-    <div class="panel">
-      <h1>'Allo, 'Allo!</h1>
-      <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-      <p>Always a pleasure scaffolding your apps.</p>
-      <p><a class="button radius" ng-href="#">Splendid!</a></p>
-    </div>
-  </div>
-</div>
+  <ul class="small-6 columns no-bullet beer-list"  >
+    <li ng-repeat="beer in topBeers | orderBy:'rank'">
 
-<div class="row">
-  <div class="large-4 columns" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
-    <div class="th">
-      <img class="right" ng-src="images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
-      <div class="caption">
-        <h3>{{awesomeThing.title}}</h3>
-        <p>{{awesomeThing.description}}</p>
-        <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a></p>
+      <div class="beer-header">
+        <h5>{{beer.title}}</h5>
+        <!-- <img ng-src="images/{{beer.logo}}" alt="{{beer.title}}"> -->
       </div>
-    </div>
-  </div>
+      <p>{{beer.description}}</p>
+
+
+    </li>
+  </ul>
 </div>
 
 <div class="row">
