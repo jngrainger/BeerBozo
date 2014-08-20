@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="small-6 columns">
+
+    <div>
+      <h4>Update</h4>
+      <label>Beer
+        <input type="text" placeholder="Beer" ng-model="selectedBeer.title" />
+      </label>
+      <label>Description
+        <input type="text" placeholder="Description" ng-model="selectedBeer.description" />
+      </label>
+      <label>Rank
+        <input type="text" placeholder="Rank" ng-model="selectedBeer.rank" />
+      </label>
+    </div>
+
+    <div>
+      <h4>New</h4>
+      <label>Beer
+        <input type="text" placeholder="Beer" ng-model="title" />
+      </label>
+      <label>Description
+        <input type="text" placeholder="Description" ng-model="description" />
+      </label>
+      <label>Rank
+        <input type="text" placeholder="Rank" ng-model="rank" />
+      </label>
+      <button class="button small" ng-click="boom()">Add new {{title}} beer!</button>
+    </div>
+  </div>
+
+  <ul class="small-6 columns no-bullet beer-list">
+    <li ng-repeat="beer in topBeers | orderBy:'rank'" ng-click="fill(beer)">
+      <div class="beer-header">
+        <h5>{{beer.title}}</h5>
+      </div>
+      <p>{{beer.description}}</p>
+    </li>
+  </ul>
+</div>
