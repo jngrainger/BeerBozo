@@ -2,39 +2,40 @@
 
 angular.module('beerBozo')
   .controller('MainCtrl', function ($scope) {
-    $scope.topBeers = [
-      {
-        key: 'Kernel',
-        title: 'Kernel Pale',
-        url: 'https://angularjs.org/',
-        description: 'Pale Ale, Tasty Shit',
-        logo: 'Kernel.jpg',
-        rank: 4
-      },
-      {
-        key: 'Goose Island',
-        title: 'Goose Island IPA',
-        url: 'http://browsersync.io/',
-        description: 'Punch in the Mouth',
-        logo: 'gooseisland.jpg',
-        rank: 5
-      },
-      {
-        key: 'Magic Rock',
-        title: 'Magic Rock High Wire',
-        url: 'http://gulpjs.com/',
-        description: 'Yum.',
-        logo: 'magicRock.jpg',
-        rank: 4
-      },
-      {
-        key: 'Beaver',
-        title: 'BeaverTown Smog Rocket',
-        url: 'http://jasmine.github.io/',
-        description: 'Behavior-Driven JavaScript.',
-        logo: 'smog.jpg',
-        rank: 4
-      }      
-    ];
-    
+
+    // The initial beer list
+    $scope.topBeers = [{
+      title: 'Kernal',
+      description: 'hoppy',
+      rank: 1
+    }];
+
+    $scope.boom = function () {
+
+      // Create the new beer from the form elements
+      var newBeer = {
+        title: $scope.title,
+        description: $scope.description,
+        rank: $scope.rank
+      };
+
+      // Add the beer to the list
+      $scope.topBeers.push(newBeer);
+
+      // Reset the new beer form
+      $scope.title = '';
+      $scope.description = '';
+      $scope.rank = '';
+    };
+
+    $scope.fill = function (beer) {
+
+      // Set the new beer form variables
+      $scope.title = beer.title;
+      $scope.description = beer.description;
+      $scope.rank = beer.rank;
+
+      // Set the selectedBeer so we can update
+      $scope.selectedBeer = beer;
+    };
   });

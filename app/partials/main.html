@@ -1,35 +1,40 @@
-<nav class="top-bar row">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="#">BeerBozo</a></h1>
-    </li>
-  </ul>
-
-  <section class="top-bar-section">
-    <ul class="right">
-      <li class="active"><a ng-href="#">Top Beer</a></li>
-    </ul>
-  </section>
-</nav>
-
 <div class="row">
-  <ul class="small-6 columns no-bullet beer-list"  >
-    <li ng-repeat="beer in topBeers | orderBy:'rank'">
+  <div class="small-6 columns">
 
+    <div>
+      <h4>Update</h4>
+      <label>Beer
+        <input type="text" placeholder="Beer" ng-model="selectedBeer.title" />
+      </label>
+      <label>Description
+        <input type="text" placeholder="Description" ng-model="selectedBeer.description" />
+      </label>
+      <label>Rank
+        <input type="text" placeholder="Rank" ng-model="selectedBeer.rank" />
+      </label>
+    </div>
+
+    <div>
+      <h4>New</h4>
+      <label>Beer
+        <input type="text" placeholder="Beer" ng-model="title" />
+      </label>
+      <label>Description
+        <input type="text" placeholder="Description" ng-model="description" />
+      </label>
+      <label>Rank
+        <input type="text" placeholder="Rank" ng-model="rank" />
+      </label>
+      <button class="button small" ng-click="boom()">Add new {{title}} beer!</button>
+    </div>
+  </div>
+
+  <ul class="small-6 columns no-bullet beer-list">
+    <li ng-repeat="beer in topBeers | orderBy:'rank'" ng-click="fill(beer)">
       <div class="beer-header">
         <h5>{{beer.title}}</h5>
-        <!-- <img ng-src="images/{{beer.logo}}" alt="{{beer.title}}"> -->
       </div>
       <p>{{beer.description}}</p>
-
-
     </li>
   </ul>
-</div>
-
-<div class="row">
-  <div class="large-12 columns">
-    <hr>
-    <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
-  </div>
 </div>

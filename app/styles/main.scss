@@ -3,6 +3,7 @@ $body-font-color: #eaeaea;
 $body-font-family: "Rambla", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $header-font-family: "Arvo";
 $header-font-color: white;
+$primary-color: #068587;
 
 @import '../bower_components/foundation/scss/foundation';
 
@@ -25,6 +26,18 @@ $header-font-color: white;
     width: 75px;
 
   }
+}
+
+label {
+  color: #ccc;
+}
+
+input[type="text"], input[type="text"]:focus  {
+  background-color: transparent;
+  color: white;
+  border-color: rgb(31, 31, 37);
+  outline: none;
+  box-shadow: none;
 }
 
 .beer-header {
